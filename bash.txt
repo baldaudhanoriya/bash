@@ -5,7 +5,7 @@ $       represents standard user account
 root    administrators account
 ~       represents a home folder
 /       represents top of all directory
-cd /    takes you to top
+cd /    takes you to top of directory
 cd      also takes you to home
 cd ~    also takes you to home
 
