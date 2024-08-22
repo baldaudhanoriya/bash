@@ -1,0 +1,140 @@
+On Ubuntu, you need to prefix a command with  sudo to run it with root permissions.
+Windows file system is located at /mnt/c in the Bash shell environment.
+
+$       represents standard user account
+root    administrators account
+~       represents a home folder
+/       represents top of all directory
+cd /    takes you to top
+cd      also takes you to home
+cd ~    also takes you to home
+
+
+how to start or end:
+    start:
+        1. type bash in cmd
+        2. direct run the app of linux distribution
+    end:
+        1. type exit
+        2. type CTRL + d
+        3. type logout
+
+go into windows using mount:
+    cd /mnt/c
+    cd /mnt/d
+
+browse through directory:
+    mkdir first second  // make multiple directories
+    rmdir first secons  // remove directories
+    pwd                 // present working directory:
+    ls                  // list storage, list files and folders
+    ls -a               // show files starting with '.' (hiddden)
+    ls -l               // list files,  use a long listing format
+    ls ~                // list whats on home directory from different folder
+    ls .txt             // wildcard list files ending with .txt
+    cd                  // chage directory, with any followup it will take you to home directory
+                            cd without any arguments takes home
+    pushd               // takes you to a directory temporary
+    popd                // brings you back from pushd
+
+    if there is space in directory use \ before space or put whole directory name inside ''.
+    permissions needs to be set x
+
+
+file:
+    touch abc.txt           // create file abc.txt or change 'updated' date of file the alredy exist
+    nano abc.txt            // open file in edit mode
+    cat abc.txt a2.txt      // read file
+    more file1              // read from a file in chunks( use 'q' to stop)
+    less file1              // smae as more but scrol through arrows
+        history | less
+    file file/folder        // returns type of file and few details about it
+        file *              // all files and folder with details
+    search
+        locate file_name        // find a file 
+        updatedb                // creates or updates a database used by locate
+    cp source destination   // copy file to a directory or in a file
+    mv old_file new_name    // rename a file
+    rm file                 // delete a file
+        rm file*            // wild card delete
+    rmdir directory         // remove empty directory
+    rm -r directory         // remove every thing from directory and then directory itself, r - recursive
+    ls -al / > lout.txt     // write every thing to file
+    change file attributes:
+        r-read 4, w-write 2, x- execute 1
+        permissions are for three types
+            self, group, everyone
+        chmod +x file_name  // change for everyone
+        chmod 755 file_name // permissions using code
+
+basic:
+    which cmd               // looks for a cmd and tells where it is
+    cal                     // prints calendar with current date
+    history                 // returns last 1000 uniq command
+    whatis                  // find information about cmd
+        what is la
+    apropos                 // get information about anything
+        apropos time
+        apropos dir
+    man                     // get detailed information
+        man time
+        Spacebar : To go to the next screen
+        b: to go to the previous screen
+        /: to search for a specific word
+        q: quit
+
+update packages:
+    sudo apt-get update
+    sudo apt-get upgrade
+
+
+install packages:
+    tree:   
+        sudo apt-get install tree
+
+
+alias:
+    to make alias edit .bachrc    // there are two .bashrc 1 under root and 1 under home/user/.bashrc
+        nano ~/.bashrc          // open bashrc file
+        add alias:
+            alias wind='cd /mnt/d'              // should not be space before and after '='
+        after adding alias source the file:
+            source ~/.bashrc
+
+cat (concate):
+    cat file_name       // read from a file
+    cat >> file_name    // append to a file ('ctrl' + d to get out of it)
+    cat > file_name     // create new file
+    cat file1 file2
+
+log into diff profile:
+    sudo -s             // log as root
+    exit                // log out of root
+    su - other_profile  // log into other account and into home of that account
+    su other_profile    // lon into other account but stay in out own home
+    users               // get all the user on a system
+    id                  // get details about user
+
+
+misc:
+    watch -n 5 -d  cmd           // runs a cmd every 5 second -n time -d difference highlight
+    ctrl + c            // kill a processs
+    ctrl + la           // clear
+
+    killall chrome      // kill a app
+    ctrl + l            // clear
+    echo "Hello Worls"  // returns whatever you type
+    date                // returns current day date time
+    cmd1 | cmd2         // cmd1's output is input for cmd2
+    echo $SHELL         // what shell you using
+    wc                  // word count
+        -l = newline count, -w = word count, -m = byte count
+
+    sort                // filter sorts lines alphabetically or numerically
+    uniq                // gives us the number of unique lines in the input stream.
+    free -h             // memory
+    df -h               // disk
+    uptime              // runnning time of system
+    ~/.profile          // configration files
+folder for your scripts:
+    usr/local/bin/xbt
