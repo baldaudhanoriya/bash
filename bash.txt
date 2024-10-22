@@ -66,6 +66,20 @@ file:
             self, group, everyone
         chmod +x file_name  // change for everyone
         chmod 755 file_name // permissions using code
+    
+    zip:
+        sudo apt-get install zip unzip  
+        zip file.zip path    // file/folder to zip
+        zip -r file.zip path // recursive
+        unzip file.zip       // extract zip file
+
+        A TAR file, short for Tape Archive file: a file format that stores multiple files and directories into a single file, uncompressed, .tar
+            tar -cvf archive_name.tar path      // create a tar file, doesn't compress
+            tar -xvf filename                   // extract a tar file
+
+        Gzip is a software application and file format that compresses and decompresses files, .gz
+            tar -czvf file_name.tar.gz path  // create a tar file and compress it, .tar.gz  
+            tar -xzvf filename                      // extract tar.gz file
 
 basic:
     which cmd               // looks for a cmd and tells where it is
@@ -138,3 +152,22 @@ misc:
     ~/.profile          // configration files
 folder for your scripts:
     usr/local/bin/xbt
+
+
+bc: basic calculator
+    echo "5 + 3" | bc
+
+    With the -l option, you can perform more complex calculations:
+        echo "scale=5; sqrt(2)" | bc -l
+
+[ ]: Evaluates string comparisons, file tests, and other general conditions.
+(( )): Evaluates arithmetic expressions and comparisons
+
+Operators:
+    [ ]: Uses operators like =, !=, -eq, -ne, -lt, -le, -gt, -ge for comparisons.
+    (( )): Uses standard arithmetic operators like +, -, *, /, %, >, <, >=, <=, ==, !=.
+
+Find:
+    find [path] [expression]
+    Find directories:
+        find /path/to/search -type d -name "dirname"
